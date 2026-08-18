@@ -1,0 +1,40 @@
+/**
+ * Sistema de Variáveis e Design Tokens do GeoEstruturas AI (SEMAE).
+ */
+:root {
+  /* Cores Institucionais e Técnicas SEMAE */
+  --cor-primaria-petroleo: #003B46;
+  --cor-primaria-escura: #07575B;
+  --cor-primaria-marinho: #0A2540;
+  --cor-destaque-teal: #00A896;
+  --cor-destaque-turquesa: #028090;
+  --cor-fundo-gis-escuro: #0B132B;
+  --cor-fundo-app: #F8FAFC;
+  --cor-card-superficie: #FFFFFF;
+  --cor-card-escuro: #1E293B;
+  
+  /* Cores de Estado e Marcadores */
+  --cor-marcador-ia-vermelho: #EF4444;
+  --cor-marcador-manual-azul: #3B82F6;
+  --cor-marcador-revisao-ambar: #F59E0B;
+  --cor-marcador-removido-cinza: #64748B;
+  --cor-poligono-amarelo: #FACC15;
+  --cor-sucesso-verde: #10B981;
+
+  /* Tipografia */
+  --fonte-principal: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fonte-mono: 'JetBrains Mono', monospace;
+
+  /* Sombras e Elevações */
+  --sombra-card: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --sombra-flutuante: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --sombra-modal: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+
+  /* Bordas */
+  --raio-borda-sm: 4px;
+  --raio-borda-md: 8px;
+  --raio-borda-lg: 12px;
+  --raio-borda-pill: 9999px;
+  --borda-suave: 1px solid #E2E8F0;
+  --borda-escura: 1px solid #334155;
+}

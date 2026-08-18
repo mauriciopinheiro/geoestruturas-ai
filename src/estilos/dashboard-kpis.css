@@ -1,0 +1,153 @@
+/**
+ * Estilos dos KPIs e Barra de Filtros do Dashboard.
+ */
+.container-dashboard-projetos {
+  flex: 1;
+  padding: 24px 32px;
+  overflow-y: auto;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.painel-metricas-globais {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.card-kpi-global {
+  background: var(--cor-card-superficie);
+  border: var(--borda-suave);
+  border-radius: var(--raio-borda-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--sombra-card);
+}
+
+.icone-kpi {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--raio-borda-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icone-kpi.verde { background: #ECFDF5; color: #059669; }
+.icone-kpi.azul { background: #EFF6FF; color: #2563EB; }
+.icone-kpi.ambar { background: #FFFBEB; color: #D97706; }
+.icone-kpi.roxo { background: #F5F3FF; color: #7C3AED; }
+
+.rotulo-kpi {
+  font-size: 12px;
+  color: #64748B;
+  display: block;
+  font-weight: 500;
+}
+
+.valor-kpi {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0F172A;
+  font-family: var(--fonte-mono);
+}
+
+.cabecalho-lista-projetos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.titulo-secao-dashboard {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.subtitulo-secao-dashboard {
+  font-size: 13px;
+  color: #64748B;
+  margin-top: 2px;
+}
+
+.btn-novo-levantamento-grande {
+  background: var(--cor-primaria-petroleo);
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: var(--raio-borda-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 4px rgba(0, 59, 70, 0.2);
+}
+
+.btn-novo-levantamento-grande:hover {
+  background: var(--cor-primaria-escura);
+}
+
+/* Filtros */
+.barra-filtros-dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.campo-busca-projetos {
+  flex: 1;
+  position: relative;
+  max-width: 480px;
+}
+
+.icone-lupa {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94A3B8;
+}
+
+.input-busca-geral {
+  width: 100%;
+  padding: 9px 12px 9px 38px;
+  border: 1px solid #CBD5E1;
+  border-radius: var(--raio-borda-md);
+  background: #FFFFFF;
+  outline: none;
+}
+
+.input-busca-geral:focus {
+  border-color: var(--cor-destaque-teal);
+  box-shadow: 0 0 0 3px rgba(0, 168, 150, 0.15);
+}
+
+.botoes-filtro-status {
+  display: flex;
+  background: #E2E8F0;
+  padding: 3px;
+  border-radius: var(--raio-borda-sm);
+}
+
+.btn-filtro-tab {
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #475569;
+  border-radius: var(--raio-borda-sm);
+}
+
+.btn-filtro-tab.ativo {
+  background: #FFFFFF;
+  color: var(--cor-primaria-petroleo);
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}

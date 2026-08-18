@@ -1,0 +1,209 @@
+version: 1
+change_sets:
+- id: CS-001-GEOESTRUTURAS-CORE
+  spec: docs/sdd/SPEC-001-LEVANTAMENTO-TERRITORIAL.md
+  requirements:
+  - REQ-001
+  - REQ-002
+  - REQ-003
+  - REQ-004
+  - REQ-005
+  - REQ-006
+  - REQ-007
+  - REQ-008
+  - REQ-009
+  - REQ-010
+  acceptance_criteria:
+  - AC-001
+  - AC-002
+  - AC-003
+  tasks:
+  - TASK-001
+  files:
+  - path: src/App.tsx
+    ranges:
+    - start: 1
+      end: 188
+  - path: src/componentes/assistente/EtapaDefinicaoArea.tsx
+    ranges:
+    - start: 1
+      end: 137
+  - path: src/componentes/assistente/EtapaInformacoes.tsx
+    ranges:
+    - start: 1
+      end: 122
+  - path: src/componentes/assistente/EtapaUploadImagem.tsx
+    ranges:
+    - start: 1
+      end: 175
+  - path: src/componentes/assistente/ModalNovoLevantamento.tsx
+    ranges:
+    - start: 1
+      end: 168
+  - path: src/componentes/comum/AlertaQualidade.tsx
+    ranges:
+    - start: 1
+      end: 49
+  - path: src/componentes/comum/BarraSuperiorAcoes.tsx
+    ranges:
+    - start: 1
+      end: 61
+  - path: src/componentes/comum/CabecalhoPrincipal.tsx
+    ranges:
+    - start: 1
+      end: 85
+  - path: src/componentes/comum/IndicadorCarregamentoIA.tsx
+    ranges:
+    - start: 1
+      end: 83
+  - path: src/componentes/comum/ModalAjuda.tsx
+    ranges:
+    - start: 1
+      end: 99
+  - path: src/componentes/conferencia/CardInspecaoMarcador.tsx
+    ranges:
+    - start: 1
+      end: 104
+  - path: src/componentes/conferencia/GaleriaEstruturasIncertas.tsx
+    ranges:
+    - start: 1
+      end: 87
+  - path: src/componentes/conferencia/HistoricoAuditoria.tsx
+    ranges:
+    - start: 1
+      end: 54
+  - path: src/componentes/conferencia/PainelConferencia.tsx
+    ranges:
+    - start: 1
+      end: 175
+  - path: src/componentes/dashboard/CardLevantamento.tsx
+    ranges:
+    - start: 1
+      end: 94
+  - path: src/componentes/dashboard/FiltroProjetos.tsx
+    ranges:
+    - start: 1
+      end: 61
+  - path: src/componentes/dashboard/PainelProjetos.tsx
+    ranges:
+    - start: 1
+      end: 133
+  - path: src/componentes/estatisticas/CardContadorPrincipal.tsx
+    ranges:
+    - start: 1
+      end: 46
+  - path: src/componentes/estatisticas/PainelEstatisticas.tsx
+    ranges:
+    - start: 1
+      end: 105
+  - path: src/componentes/estatisticas/TabelaMetricas.tsx
+    ranges:
+    - start: 1
+      end: 109
+  - path: src/componentes/visualizador/AmbienteBancadaGIS.tsx
+    ranges:
+    - start: 1
+      end: 182
+  - path: src/componentes/visualizador/BarraFerramentasGIS.tsx
+    ranges:
+    - start: 1
+      end: 150
+  - path: src/componentes/visualizador/CanvasVisualizador.tsx
+    ranges:
+    - start: 1
+      end: 161
+  - path: src/componentes/visualizador/ComparadorAntesDepois.tsx
+    ranges:
+    - start: 1
+      end: 191
+  - path: src/componentes/visualizador/ControleCamadas.tsx
+    ranges:
+    - start: 1
+      end: 134
+  - path: src/componentes/visualizador/RenderizadorMarcadores.ts
+    ranges:
+    - start: 1
+      end: 90
+  - path: src/componentes/visualizador/RenderizadorPoligono.ts
+    ranges:
+    - start: 1
+      end: 56
+  - path: src/ganchos/useControleCanvas.ts
+    ranges:
+    - start: 1
+      end: 91
+  - path: src/ganchos/useEventosMouseCanvas.ts
+    ranges:
+    - start: 1
+      end: 128
+  - path: src/ganchos/useHistoricoAuditoria.ts
+    ranges:
+    - start: 1
+      end: 99
+  - path: src/ganchos/useLevantamento.ts
+    ranges:
+    - start: 1
+      end: 189
+  - path: src/main.tsx
+    ranges:
+    - start: 1
+      end: 9
+  - path: src/servicos/armazenamento-projetos.ts
+    ranges:
+    - start: 1
+      end: 54
+  - path: src/servicos/avaliador-qualidade-imagem.ts
+    ranges:
+    - start: 1
+      end: 74
+  - path: src/servicos/calculador-estatisticas.ts
+    ranges:
+    - start: 1
+      end: 79
+  - path: src/servicos/detector-poligono-amarelo.ts
+    ranges:
+    - start: 1
+      end: 83
+  - path: src/servicos/geometria-espacial.ts
+    ranges:
+    - start: 1
+      end: 82
+  - path: src/servicos/motor-visao-computacional.ts
+    ranges:
+    - start: 1
+      end: 152
+  - path: src/servicos/processamento-imagem-base.ts
+    ranges:
+    - start: 1
+      end: 59
+  - path: src/servicos/projetos-amostra.ts
+    ranges:
+    - start: 1
+      end: 181
+  - path: src/servicos/servico-exportacao.ts
+    ranges:
+    - start: 1
+      end: 165
+  - path: src/servicos/servico-relatorio-pdf.ts
+    ranges:
+    - start: 1
+      end: 127
+  - path: src/tipos/deteccao.ts
+    ranges:
+    - start: 1
+      end: 43
+  - path: src/tipos/estatisticas.ts
+    ranges:
+    - start: 1
+      end: 30
+  - path: src/tipos/levantamento.ts
+    ranges:
+    - start: 1
+      end: 52
+  - path: src/tipos/poligono.ts
+    ranges:
+    - start: 1
+      end: 27
+  evidence:
+  - Testes unitários e de integração concluídos.
+  - Validação automática dos gates SDD executada.

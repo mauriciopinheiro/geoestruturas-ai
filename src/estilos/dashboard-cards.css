@@ -1,0 +1,148 @@
+/**
+ * Estilos da Grade e Cards de Levantamento do Dashboard.
+ */
+.grade-projetos-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.card-levantamento-item {
+  background: #FFFFFF;
+  border: var(--borda-suave);
+  border-radius: var(--raio-borda-lg);
+  overflow: hidden;
+  box-shadow: var(--sombra-card);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-levantamento-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.container-thumbnail-levantamento {
+  position: relative;
+  height: 160px;
+  background: #0F172A;
+  cursor: pointer;
+}
+
+.imagem-miniatura-projeto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tag-status-projeto {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 3px 8px;
+  border-radius: var(--raio-borda-pill);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.tag-status-projeto.status-concluido { background: #DCFCE7; color: #166534; }
+.tag-status-projeto.status-em_conferencia { background: #FEF3C7; color: #92400E; }
+.tag-status-projeto.status-novo { background: #DBEAFE; color: #1E40AF; }
+
+.corpo-card-levantamento {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.codigo-projeto-mini {
+  font-family: var(--fonte-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--cor-destaque-teal);
+}
+
+.titulo-projeto {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0F172A;
+  cursor: pointer;
+  line-height: 1.3;
+}
+
+.detalhes-localizacao {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 4px 0;
+}
+
+.item-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #64748B;
+}
+
+.resumo-contagem-card {
+  background: #F8FAFC;
+  padding: 10px 12px;
+  border-radius: var(--raio-borda-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.bloco-numero-card {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icone-barraco { color: var(--cor-destaque-teal); }
+.valor-barracos { font-size: 16px; font-weight: 800; color: #0F172A; font-family: var(--fonte-mono); }
+.rotulo-barracos { font-size: 12px; color: #64748B; }
+.bloco-revisao-card { font-size: 11.5px; font-weight: 600; color: #059669; display: flex; align-items: center; gap: 4px; }
+
+.rodape-card-levantamento {
+  padding: 10px 16px;
+  background: #FAFAFA;
+  border-top: var(--borda-suave);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-excluir-projeto {
+  color: #94A3B8;
+  padding: 6px;
+  border-radius: var(--raio-borda-sm);
+}
+
+.btn-excluir-projeto:hover { color: #EF4444; background: #FEE2E2; }
+
+.btn-abrir-projeto {
+  color: var(--cor-primaria-petroleo);
+  font-size: 12.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-abrir-projeto:hover { color: var(--cor-destaque-teal); }
+
+.estado-vazio-dashboard {
+  text-align: center;
+  padding: 60px 20px;
+  background: #FFFFFF;
+  border-radius: var(--raio-borda-lg);
+  border: 1px dashed #CBD5E1;
+}
+
+.icone-vazio { color: #94A3B8; margin-bottom: 12px; }

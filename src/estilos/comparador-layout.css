@@ -1,0 +1,107 @@
+/**
+ * Estilos da Barra de Controles e Layout do Comparador Antes/Depois.
+ */
+.container-comparador-completo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--cor-fundo-gis-escuro);
+  overflow: hidden;
+}
+
+.barra-controles-comparador {
+  height: 52px;
+  background: #0F172A;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  flex-shrink: 0;
+  z-index: 20;
+}
+
+.grupo-modos-comparador {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-modo-comp {
+  background: transparent;
+  color: #94A3B8;
+  padding: 6px 12px;
+  border-radius: var(--raio-borda-sm);
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-modo-comp:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+.btn-modo-comp.ativo {
+  background: var(--cor-destaque-teal);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.acoes-exportacao-comparador {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.checkbox-legenda-comp {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #CBD5E1;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.checkbox-legenda-comp input {
+  accent-color: var(--cor-destaque-teal);
+}
+
+.btn-download-comp {
+  background: #1E293B;
+  color: #FFFFFF;
+  border: 1px solid #475569;
+  padding: 6px 12px;
+  border-radius: var(--raio-borda-sm);
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-download-comp:hover:not(:disabled) {
+  background: #334155;
+}
+
+.btn-download-comp.destaque {
+  background: var(--cor-destaque-teal);
+  border-color: transparent;
+}
+
+.btn-download-comp.destaque:hover:not(:disabled) {
+  background: #008f80;
+}
+
+.area-visualizacao-comparador {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px;
+}

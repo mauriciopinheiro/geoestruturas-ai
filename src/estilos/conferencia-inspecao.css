@@ -1,0 +1,157 @@
+/**
+ * Estilos do Card de Inspeção de Marcador e Galeria de Incertezas.
+ */
+.card-inspecao-flutuante {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: #FFFFFF;
+  border-radius: var(--raio-borda-md);
+  padding: 14px;
+  width: 280px;
+  box-shadow: var(--sombra-modal);
+  border: 1px solid #CBD5E1;
+  z-index: 45;
+}
+
+.cabecalho-inspecao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.badge-codigo {
+  font-family: var(--fonte-mono);
+  font-size: 13px;
+  font-weight: 700;
+  background: #0F172A;
+  color: #FFFFFF;
+  padding: 2px 6px;
+  border-radius: var(--raio-borda-sm);
+}
+
+.rotulo-tipo { font-size: 11px; color: #64748B; margin-left: 6px; }
+.btn-fechar-inspecao { color: #94A3B8; padding: 2px; }
+.btn-fechar-inspecao:hover { color: #0F172A; }
+
+.detalhes-inspecao { font-size: 12px; display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+.linha-metrica { display: flex; justify-content: space-between; }
+.confianca-alta { color: #16A34A; }
+.confianca-media { color: #CA8A04; }
+.confianca-baixa { color: #DC2626; }
+.alerta-borda-tag { font-size: 10.5px; background: #FEF3C7; color: #92400E; padding: 4px 6px; border-radius: 4px; }
+
+.acoes-inspecao { display: flex; gap: 6px; }
+.btn-acao-inspecao {
+  flex: 1;
+  padding: 6px 8px;
+  border-radius: var(--raio-borda-sm);
+  font-size: 11.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.btn-acao-inspecao.confirmar { background: #00A896; color: #FFFFFF; }
+.btn-acao-inspecao.remover { background: #EF4444; color: #FFFFFF; }
+.btn-acao-inspecao.centralizar { flex: 0 0 32px; background: #F1F5F9; color: #334155; }
+
+/* Galeria de Incertezas */
+.container-galeria-incertas {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cabecalho-galeria {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.titulo-galeria {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.badge-contagem-incertas {
+  font-size: 11px;
+  color: #D97706;
+  font-weight: 600;
+}
+
+.btn-proxima-pendencia {
+  background: var(--cor-destaque-teal);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: var(--raio-borda-sm);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.grade-cards-incertas {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-incerta-item {
+  border: 1px solid #FDE68A;
+  background: #FFFBEB;
+  border-radius: var(--raio-borda-sm);
+  padding: 8px;
+}
+
+.topo-card-incerta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.topo-card-incerta .codigo { font-family: var(--fonte-mono); font-size: 12px; }
+.topo-card-incerta .porcentagem { font-size: 11.5px; font-weight: 700; color: #D97706; }
+
+.acoes-rapidas-incerta {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-rapido {
+  flex: 1;
+  padding: 4px 6px;
+  border-radius: var(--raio-borda-sm);
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.btn-rapido.confirmar { background: #DCFCE7; color: #166534; }
+.btn-rapido.rejeitar { background: #FEE2E2; color: #991B1B; }
+
+/* Trilha de Auditoria */
+.container-historico-auditoria { flex: 1; padding: 12px; overflow-y: auto; }
+.cabecalho-historico { font-size: 12px; font-weight: 700; color: #334155; display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+.lista-eventos-auditoria { display: flex; flex-direction: column; gap: 8px; }
+.item-evento-auditoria { border-left: 2px solid var(--cor-destaque-teal); padding-left: 8px; }
+.horario-evento { font-size: 10.5px; color: #94A3B8; font-family: var(--fonte-mono); }
+.corpo-evento { display: flex; align-items: center; gap: 6px; font-size: 11.5px; color: #1E293B; margin-top: 2px; }
+.icone-auditoria.adicao { color: #2563EB; }
+.icone-auditoria.confirmacao { color: #16A34A; }
+.icone-auditoria.remocao { color: #DC2626; }
+.icone-auditoria.movimento { color: #CA8A04; }

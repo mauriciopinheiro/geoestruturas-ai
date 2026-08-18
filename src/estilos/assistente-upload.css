@@ -1,0 +1,161 @@
+/**
+ * Estilos da Etapa 2 (Upload de Imagem) e Etapa 3 (Definição de AOI).
+ */
+.zona-drag-drop-imagem {
+  border: 2px dashed #CBD5E1;
+  border-radius: var(--raio-borda-lg);
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  background: #F8FAFC;
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.zona-drag-drop-imagem:hover {
+  border-color: var(--cor-destaque-teal);
+  background: #F0FDFA;
+}
+
+.icone-nuvem-upload {
+  color: var(--cor-destaque-teal);
+  margin-bottom: 10px;
+}
+
+.instrucoes-upload h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0F172A;
+}
+
+.instrucoes-upload p {
+  font-size: 12px;
+  color: #64748B;
+  margin-top: 4px;
+}
+
+.preview-imagem-upload {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  text-align: left;
+}
+
+.img-preview {
+  width: 140px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: var(--raio-borda-md);
+  border: 1px solid #CBD5E1;
+}
+
+.painel-meta-imagem-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.nome-arquivo-upload {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #0F172A;
+}
+
+.dimensoes-upload { color: #64748B; }
+.nitidez-ok { color: #16A34A; display: flex; align-items: center; gap: 4px; font-weight: 600; }
+.nitidez-alerta { color: #D97706; display: flex; align-items: center; gap: 4px; font-weight: 600; }
+.link-trocar-imagem { font-size: 11px; color: var(--cor-destaque-teal); text-decoration: underline; margin-top: 4px; }
+
+.secao-amostras-rapidas { margin-top: 10px; }
+.rotulo-amostras { font-size: 12px; font-weight: 600; color: #475569; display: block; margin-bottom: 8px; }
+
+.botoes-amostras-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.btn-amostra-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--raio-borda-md);
+  background: #FFFFFF;
+  text-align: left;
+}
+
+.btn-amostra-card:hover {
+  border-color: var(--cor-destaque-teal);
+  background: #F0FDFA;
+}
+
+.thumb-amostra {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.info-amostra strong { font-size: 12px; color: #0F172A; display: block; }
+.info-amostra span { font-size: 10.5px; color: #64748B; }
+
+/* Opções Etapa 3 (AOI) */
+.grade-opcoes-area {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.card-opcao-area {
+  border: 1px solid #E2E8F0;
+  border-radius: var(--raio-borda-md);
+  padding: 16px 12px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-opcao-area:hover {
+  border-color: var(--cor-destaque-teal);
+  background: #F0FDFA;
+}
+
+.icone-opcao-area {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icone-opcao-area.amarelo { background: #FEF3C7; color: #D97706; }
+.icone-opcao-area.azul { background: #EFF6FF; color: #2563EB; }
+.icone-opcao-area.verde { background: #ECFDF5; color: #059669; }
+
+.card-opcao-area h4 { font-size: 13px; font-weight: 700; color: #0F172A; }
+.card-opcao-area p { font-size: 11px; color: #64748B; line-height: 1.4; }
+.btn-acao-opcao { font-size: 11px; font-weight: 600; color: var(--cor-destaque-teal); margin-top: auto; }
+
+.alerta-resultado-deteccao-area {
+  padding: 10px 14px;
+  border-radius: var(--raio-borda-md);
+  font-size: 12.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.alerta-resultado-deteccao-area.sucesso { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
+.alerta-resultado-deteccao-area.aviso { background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; }
+.resumo-area-selecionada { font-size: 12px; color: #334155; background: #F8FAFC; padding: 8px 12px; border-radius: 6px; }

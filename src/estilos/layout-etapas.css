@@ -1,0 +1,82 @@
+/**
+ * Estilos da Barra de Etapas e Workspace GIS.
+ */
+.barra-etapas-fluxo {
+  height: 48px;
+  background: #FFFFFF;
+  border-bottom: var(--borda-suave);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  flex-shrink: 0;
+}
+
+.trilha-passos {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.passo-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--raio-borda-sm);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #64748B;
+  background: transparent;
+}
+
+.passo-item:hover {
+  background: #F1F5F9;
+  color: #0F172A;
+}
+
+.passo-item.ativo {
+  background: #E6FFFA;
+  color: var(--cor-primaria-escura);
+  font-weight: 600;
+  border: 1px solid #B2F5EA;
+}
+
+.btn-executar-ia-destaque {
+  background: linear-gradient(135deg, #00A896, #028090);
+  color: #FFFFFF;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--raio-borda-sm);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 2px 4px rgba(0, 168, 150, 0.25);
+}
+
+.btn-executar-ia-destaque:hover:not(:disabled) {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.btn-executar-ia-destaque:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.workspace-gis-completo {
+  flex: 1;
+  display: flex;
+  height: calc(100vh - 108px);
+  overflow: hidden;
+  position: relative;
+}
+
+.area-central-mapa {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  background: var(--cor-fundo-gis-escuro);
+  overflow: hidden;
+}

@@ -1,0 +1,140 @@
+/**
+ * Estilos do Cabeçalho institucional SEMAE e Identidade Visual.
+ */
+.cabecalho-sistema {
+  height: 60px;
+  background: var(--cor-primaria-marinho);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 2px solid var(--cor-destaque-teal);
+  flex-shrink: 0;
+  z-index: 50;
+}
+
+.lado-esquerdo-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn-voltar-dash {
+  color: #94A3B8;
+  padding: 6px;
+  border-radius: var(--raio-borda-sm);
+  display: flex;
+  align-items: center;
+}
+
+.btn-voltar-dash:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+.bloco-marca-semae {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-oficial-semae {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.separador-marca {
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.titulos-sistema {
+  display: flex;
+  flex-direction: column;
+}
+
+.nome-aplicacao {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #FFFFFF;
+  line-height: 1.1;
+}
+
+.subtitulo-aplicacao {
+  font-size: 11px;
+  color: #94A3B8;
+  letter-spacing: 0.2px;
+}
+
+.centro-cabecalho-projeto {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 6px 14px;
+  border-radius: var(--raio-borda-pill);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.badge-codigo-projeto {
+  font-family: var(--fonte-mono);
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--cor-destaque-teal);
+  color: #FFFFFF;
+  padding: 2px 7px;
+  border-radius: var(--raio-borda-sm);
+}
+
+.nome-comunidade-cabecalho {
+  font-size: 13px;
+  font-weight: 600;
+  color: #F8FAFC;
+}
+
+.indicador-salvamento {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #6EE7B7;
+}
+
+.lado-direito-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-novo-levantamento-topo {
+  background: var(--cor-destaque-teal);
+  color: #FFFFFF;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: var(--raio-borda-sm);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-novo-levantamento-topo:hover {
+  background: #008f80;
+}
+
+.btn-icone-ajuda {
+  color: #94A3B8;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.btn-icone-ajuda:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
+}

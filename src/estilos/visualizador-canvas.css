@@ -1,0 +1,80 @@
+/**
+ * Estilos do Canvas GIS e Barra de Ferramentas.
+ */
+.container-canvas-gis {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.canvas-elemento {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.canvas-elemento.modo-navegar { cursor: grab; }
+.canvas-elemento.modo-navegar:active { cursor: grabbing; }
+.canvas-elemento.modo-adicionar { cursor: crosshair; }
+.canvas-elemento.modo-remover { cursor: pointer; }
+.canvas-elemento.modo-mover { cursor: move; }
+.canvas-elemento.modo-desenhar_poligono { cursor: crosshair; }
+
+.barra-ferramentas-gis {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--raio-borda-md);
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--sombra-flutuante);
+  z-index: 40;
+}
+
+.grupo-botoes-ferramenta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn-icone-gis {
+  color: #CBD5E1;
+  background: transparent;
+  padding: 6px 10px;
+  border-radius: var(--raio-borda-sm);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.btn-icone-gis:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+}
+
+.btn-icone-gis.ativo {
+  background: var(--cor-destaque-teal);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.btn-icone-gis:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.divisor-ferramentas {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+}

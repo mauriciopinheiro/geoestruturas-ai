@@ -1,0 +1,113 @@
+/**
+ * Estilos do Palco de Visualização do Slider de Cortina e Modos Lado a Lado.
+ */
+.palco-slider-cortina {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: var(--sombra-modal);
+  border-radius: var(--raio-borda-md);
+  overflow: hidden;
+  user-select: none;
+  cursor: ew-resize;
+}
+
+.imagem-camada-slider {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 200px);
+  object-fit: contain;
+}
+
+.mascara-camada-original {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.mascara-camada-original img {
+  max-height: calc(100vh - 200px);
+}
+
+.divisor-slider-linha {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #FFFFFF;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.alca-divisor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--cor-destaque-teal);
+  color: #FFFFFF;
+  padding: 6px 8px;
+  border-radius: var(--raio-borda-pill);
+  font-size: 10px;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.etiqueta-lado {
+  position: absolute;
+  bottom: 12px;
+  padding: 4px 10px;
+  border-radius: var(--raio-borda-sm);
+  background: rgba(15, 23, 42, 0.85);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.etiqueta-lado.original { left: 12px; }
+.etiqueta-lado.marcada { right: 12px; }
+
+/* Palco Lado a Lado */
+.palco-lado-a-lado {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+.painel-lado {
+  background: #0F172A;
+  border-radius: var(--raio-borda-md);
+  border: 1px solid #334155;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cabecalho-lado {
+  background: #1E293B;
+  color: #E2E8F0;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-bottom: 1px solid #334155;
+}
+
+.painel-lado img {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.palco-simples img {
+  max-width: 100%;
+  max-height: calc(100vh - 200px);
+  object-fit: contain;
+  border-radius: var(--raio-borda-md);
+}

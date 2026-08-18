@@ -1,0 +1,160 @@
+/**
+ * Estilos do Modal Assistente e Formulários da Etapa 1 e Rodapé.
+ */
+.card-modal-assistente {
+  background: #FFFFFF;
+  border-radius: var(--raio-borda-lg);
+  max-width: 680px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--sombra-modal);
+  overflow: hidden;
+}
+
+.cabecalho-assistente {
+  padding: 16px 24px;
+  background: #0F172A;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #334155;
+}
+
+.indicadores-passo-wizard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.passo-bolinha {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #334155;
+  color: #94A3B8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.passo-bolinha.ativo {
+  background: var(--cor-destaque-teal);
+  color: #FFFFFF;
+}
+
+.linha-passo {
+  width: 40px;
+  height: 2px;
+  background: #334155;
+}
+
+.linha-passo.ativa {
+  background: var(--cor-destaque-teal);
+}
+
+.btn-fechar-modal { color: #94A3B8; padding: 4px; }
+.btn-fechar-modal:hover { color: #FFFFFF; }
+
+.corpo-assistente {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.cabecalho-etapa-texto h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 4px;
+}
+
+.cabecalho-etapa-texto p {
+  font-size: 13px;
+  color: #64748B;
+  margin-bottom: 20px;
+}
+
+/* Formulário Etapa 1 */
+.grade-formulario-etapa {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.campo-form-completo,
+.campo-form-metade {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.grade-dupla {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 12px;
+}
+
+.grade-formulario-etapa label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.input-form-padrao,
+.textarea-form-padrao {
+  padding: 9px 12px;
+  border: 1px solid #CBD5E1;
+  border-radius: var(--raio-borda-md);
+  background: #FFFFFF;
+  color: #0F172A;
+  outline: none;
+}
+
+.input-form-padrao:focus,
+.textarea-form-padrao:focus {
+  border-color: var(--cor-destaque-teal);
+  box-shadow: 0 0 0 3px rgba(0, 168, 150, 0.15);
+}
+
+/* Rodapé Wizard */
+.rodape-assistente {
+  padding: 14px 24px;
+  background: #F8FAFC;
+  border-top: var(--borda-suave);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-voltar-passo {
+  color: #64748B;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+}
+
+.btn-voltar-passo:hover { color: #0F172A; }
+
+.btn-avancar-passo {
+  background: var(--cor-primaria-petroleo);
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: var(--raio-borda-sm);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-avancar-passo:hover:not(:disabled) { background: var(--cor-primaria-escura); }
+.btn-avancar-passo:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-avancar-passo.concluir { background: var(--cor-destaque-teal); }
+.btn-avancar-passo.concluir:hover { background: #008f80; }
