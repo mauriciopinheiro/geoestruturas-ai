@@ -151,7 +151,7 @@ change_sets:
   - path: src/servicos/armazenamento-projetos.ts
     ranges:
     - start: 1
-      end: 54
+      end: 60
   - path: src/servicos/avaliador-qualidade-imagem.ts
     ranges:
     - start: 1
@@ -160,10 +160,14 @@ change_sets:
     ranges:
     - start: 1
       end: 79
+  - path: src/servicos/coordenadas-amostras.ts
+    ranges:
+    - start: 1
+      end: 7
   - path: src/servicos/detector-poligono-amarelo.ts
     ranges:
     - start: 1
-      end: 83
+      end: 101
   - path: src/servicos/geometria-espacial.ts
     ranges:
     - start: 1
@@ -171,7 +175,7 @@ change_sets:
   - path: src/servicos/motor-visao-computacional.ts
     ranges:
     - start: 1
-      end: 152
+      end: 175
   - path: src/servicos/processamento-imagem-base.ts
     ranges:
     - start: 1
@@ -179,7 +183,7 @@ change_sets:
   - path: src/servicos/projetos-amostra.ts
     ranges:
     - start: 1
-      end: 181
+      end: 188
   - path: src/servicos/servico-exportacao.ts
     ranges:
     - start: 1

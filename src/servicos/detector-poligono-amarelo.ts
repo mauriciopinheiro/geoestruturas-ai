@@ -1,5 +1,6 @@
 /**
- * Detector automático de polígonos pré-desenhados (ex: demarcação amarela em satélite).
+ * Detector de polígonos pré-desenhados (ex: demarcação amarela de comunidade).
+ * Utiliza segmentação espectral e rastreamento de contornos para polígonos côncavos.
  */
 import { PontoCoordenada, PoligonoAreaInteresse } from '../tipos/poligono';
 
@@ -11,37 +12,58 @@ export function detectarPoligonoAmarelo(
   const { width, height, data } = dados;
   const escalaX = larguraOriginal / width;
   const escalaY = alturaOriginal / height;
-  const pontosAmarelos: PontoCoordenada[] = [];
+  const mapaBinario = new Uint8Array(width * height);
+  let totalAmarelos = 0;
 
-  // Amostragem em grade para encontrar pixels de traçado amarelo
-  for (let y = 0; y < height; y += 3) {
-    for (let x = 0; x < width; x += 3) {
+  // Segmentação espectral de amarelo (R alto, G alto, B baixo)
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
       const idx = (y * width + x) * 4;
       const r = data[idx];
       const g = data[idx + 1];
       const b = data[idx + 2];
 
-      // Critério espectral para amarelo vivo (R alto, G alto, B baixo)
-      const ehAmarelo = r > 165 && g > 150 && b < 90 && Math.abs(r - g) < 65;
+      const ehAmarelo = r > 160 && g > 150 && b < 100 && Math.abs(r - g) < 55;
       if (ehAmarelo) {
-        pontosAmarelos.push({ x: x * escalaX, y: y * escalaY });
+        mapaBinario[y * width + x] = 1;
+        totalAmarelos++;
       }
     }
   }
 
-  // Se não encontrou quantidade mínima de pontos que formem um perímetro
-  if (pontosAmarelos.length < 25) {
-    return null;
+  if (totalAmarelos < 35) return null;
+
+  // Rastreamento dos pontos perimetrais ordenados por ângulo e proximidade
+  const pontosPerimetro: PontoCoordenada[] = [];
+  const passo = Math.max(2, Math.round(width / 300));
+
+  for (let y = 0; y < height; y += passo) {
+    let primeiroX = -1;
+    let ultimoX = -1;
+    for (let x = 0; x < width; x += passo) {
+      if (mapaBinario[y * width + x] === 1) {
+        if (primeiroX === -1) primeiroX = x;
+        ultimoX = x;
+      }
+    }
+    if (primeiroX !== -1) {
+      pontosPerimetro.push({ x: primeiroX * escalaX, y: y * escalaY });
+      if (ultimoX !== primeiroX) {
+        pontosPerimetro.push({ x: ultimoX * escalaX, y: y * escalaY });
+      }
+    }
   }
 
-  // Extração dos vértices externos (Convex Hull Simplificado de Graham/Monotone)
-  const vertices = calcularEnvoltoriaConvexa(pontosAmarelos);
-  if (vertices.length < 3) return null;
+  if (pontosPerimetro.length < 6) return null;
+
+  // Simplificação do contorno perimetral
+  const verticesSimplificados = simplificarContorno(pontosPerimetro, 18);
+  if (verticesSimplificados.length < 3) return null;
 
   return {
-    id: `aoi-${Date.now()}`,
-    nome: 'Área Delimitada (Auto Detectada)',
-    pontos: vertices,
+    id: `aoi-auto-${Date.now()}`,
+    nome: 'Área Delimitada por Polígono Amarelo',
+    pontos: verticesSimplificados,
     fechado: true,
     corBorda: '#FACC15',
     corPreenchimento: 'rgba(250, 204, 21, 0.12)',
@@ -49,35 +71,31 @@ export function detectarPoligonoAmarelo(
   };
 }
 
-function calcularEnvoltoriaConvexa(pontos: PontoCoordenada[]): PontoCoordenada[] {
-  const pts = [...pontos].sort((a, b) => (a.x === b.x ? a.y - b.y : a.x - b.x));
-  const cruzamento = (o: PontoCoordenada, a: PontoCoordenada, b: PontoCoordenada) =>
-    (a.x - o.x) * (b.y - o.y) - (a.y - o.y) * (b.x - o.x);
+function simplificarContorno(pontos: PontoCoordenada[], tolerancia: number): PontoCoordenada[] {
+  // Ordena os pontos angularmente em relação ao centróide para fechar o polígono
+  const centroX = pontos.reduce((acc, p) => acc + p.x, 0) / pontos.length;
+  const centroY = pontos.reduce((acc, p) => acc + p.y, 0) / pontos.length;
 
-  const inferior: PontoCoordenada[] = [];
-  for (const p of pts) {
-    while (
-      inferior.length >= 2 &&
-      cruzamento(inferior[inferior.length - 2], inferior[inferior.length - 1], p) <= 0
-    ) {
-      inferior.pop();
+  const ordenados = [...pontos].sort((a, b) => {
+    const angA = Math.atan2(a.y - centroY, a.x - centroX);
+    const angB = Math.atan2(b.y - centroY, b.x - centroX);
+    return angA - angB;
+  });
+
+  const filtrados: PontoCoordenada[] = [];
+  for (let i = 0; i < ordenados.length; i++) {
+    const atual = ordenados[i];
+    const anterior = filtrados[filtrados.length - 1];
+    if (!anterior) {
+      filtrados.push(atual);
+      continue;
     }
-    inferior.push(p);
+    const dx = atual.x - anterior.x;
+    const dy = atual.y - anterior.y;
+    if (Math.sqrt(dx * dx + dy * dy) >= tolerancia) {
+      filtrados.push(atual);
+    }
   }
 
-  const superior: PontoCoordenada[] = [];
-  for (let i = pts.length - 1; i >= 0; i--) {
-    const p = pts[i];
-    while (
-      superior.length >= 2 &&
-      cruzamento(superior[superior.length - 2], superior[superior.length - 1], p) <= 0
-    ) {
-      superior.pop();
-    }
-    superior.push(p);
-  }
-
-  inferior.pop();
-  superior.pop();
-  return inferior.concat(superior);
+  return filtrados;
 }

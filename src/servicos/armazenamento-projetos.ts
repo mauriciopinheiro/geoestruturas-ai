@@ -4,7 +4,7 @@
 import { ProjetoLevantamento } from '../tipos/levantamento';
 import { obterProjetosAmostra } from './projetos-amostra';
 
-const CHAVE_ARMAZENAMENTO = 'geoestruturas_projetos_v1';
+const CHAVE_ARMAZENAMENTO = 'geoestruturas_projetos_v2';
 
 export function listarTodosProjetos(): ProjetoLevantamento[] {
   try {
@@ -43,6 +43,12 @@ export function salvarProjeto(projeto: ProjetoLevantamento): void {
 export function excluirProjeto(id: string): void {
   const lista = listarTodosProjetos().filter((p) => p.id !== id);
   salvarListaProjetos(lista);
+}
+
+export function redefinirParaAmostrasOficiais(): ProjetoLevantamento[] {
+  const amostras = obterProjetosAmostra();
+  salvarListaProjetos(amostras);
+  return amostras;
 }
 
 function salvarListaProjetos(lista: ProjetoLevantamento[]): void {
